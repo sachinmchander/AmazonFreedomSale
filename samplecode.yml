@@ -1,0 +1,43 @@
+project:
+  name: SampleWebApp
+  version: 1.0.0
+  description: A simple web application project
+  author:
+    name: Jane Doe
+    email: janedoe@example.com
+  license: MIT
+
+dependencies:
+  - name: express
+    version: ^4.17.1
+  - name: mongoose
+    version: ^6.0.0
+  - name: dotenv
+    version: ^16.0.0
+
+scripts:
+  start: "node app.js"
+  test: "jest"
+  build: "webpack"
+
+build:
+  output:
+    path: dist/
+    filename: bundle.js
+  entry: src/index.js
+  mode: development
+
+server:
+  host: 0.0.0.0
+  port: 3000
+
+database:
+  mongodb:
+    uri: mongodb://localhost:27017/sampledb
+    options:
+      useNewUrlParser: true
+      useUnifiedTopology: true
+
+logging:
+  level: info
+  file: logs/app.log
